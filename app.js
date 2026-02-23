@@ -127,7 +127,7 @@ function renderJobs() {
           </p>
         </div>
 
-        <!-- Delete Button -->
+
         <button onclick="deleteJob(${job.id})"
           class="btn btn-sm btn-circle btn-ghost">
           ✕
@@ -136,7 +136,7 @@ function renderJobs() {
 
       <p class="mt-3 text-gray-700">${job.description}</p>
 
-      <!-- Interview & Rejected Buttons -->
+      
       <div class="mt-4 space-x-2">
 
         <button onclick="updateStatus(${job.id}, 'interview')"
@@ -158,4 +158,20 @@ function renderJobs() {
   updateDashboard();
 }
 
+// Change tab function
+function showTab(tabName) {
 
+  currentTab = tabName;
+
+  // Reset all tab styles
+  document.getElementById("tab-all").className =
+    "px-4 py-2 rounded-md bg-gray-200 text-gray-700 text-sm";
+
+  document.getElementById("tab-interview").className =
+    "px-4 py-2 rounded-md bg-gray-200 text-gray-700 text-sm";
+
+  document.getElementById("tab-rejected").className =
+    "px-4 py-2 rounded-md bg-gray-200 text-gray-700 text-sm";
+
+
+}

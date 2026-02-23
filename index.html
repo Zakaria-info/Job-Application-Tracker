@@ -41,19 +41,19 @@
 
       <!-- Total Jobs Card -->
       <div class="bg-white p-5 rounded-lg shadow">
-        <h3 class="text-gray-500">Total</h3>
+        <h3 class="text-[#323B49]">Total</h3>
         <p id="total-count" class="text-2xl font-bold">0</p>
       </div>
 
       <!-- Interview Count Card -->
       <div class="bg-white p-5 rounded-lg shadow">
-        <h3 class="text-gray-500">Interview</h3>
+        <h3 class="text-[#323B49]">Interview</h3>
         <p id="interview-count" class="text-2xl font-bold text-green-600">0</p>
       </div>
 
       <!-- Rejected Count Card -->
       <div class="bg-white p-5 rounded-lg shadow">
-        <h3 class="text-gray-500">Rejected</h3>
+        <h3 class="text-[#323B49]">Rejected</h3>
         <p id="rejected-count" class="text-2xl font-bold text-red-600">0</p>
       </div>
 
@@ -76,19 +76,19 @@
 
           <button id="tab-all"
             onclick="showTab('all')"
-            class="px-4 py-2 rounded-md bg-blue-600 text-white text-sm">
+            class="px-4 py-2 rounded-md bg-[#3B82F6] text-white text-sm w-20 h-8">
             All
           </button>
 
           <button id="tab-interview"
             onclick="showTab('interview')"
-            class="px-4 py-2 rounded-md bg-gray-200 text-gray-700 text-sm">
+            class="px-4 py-2 rounded-md bg-gray-200 text-gray-700 text-sm w-20 h-8">
             Interview
           </button>
 
           <button id="tab-rejected"
             onclick="showTab('rejected')"
-            class="px-4 py-2 rounded-md bg-gray-200 text-gray-700 text-sm">
+            class="px-4 py-2 rounded-md bg-gray-200 text-gray-700 text-sm w-20 h-8">
             Rejected
           </button>
 
@@ -96,20 +96,16 @@
       </div>
 
 
-      <!-- ===============================
-           JOB CARDS CONTAINER
-           JS will insert cards here
-      ================================ -->
+      <!-- Jobs card container -->
       <div id="job-container" class="space-y-4"></div>
 
 
-      <!-- ===============================
-           EMPTY MESSAGE
-           Shows when no jobs in tab
-      ================================ -->
+      <!-- Empty message -->
       <div id="empty-message"
            class="hidden text-center p-10 bg-white rounded-lg shadow">
-        <div class="text-5xl mb-3">📄</div>
+        <div class="text-5xl mb-3">
+            <img src="./assets/jobs.png" alt="">
+        </div>
         <h3 class="text-xl font-semibold">No jobs available</h3>
         <p class="text-gray-500">Check back soon for new opportunities</p>
       </div>

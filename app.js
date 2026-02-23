@@ -81,3 +81,81 @@ const jobs = [
   }
 ];
 
+// Track current tab
+
+let currentTab = "all";
+
+
+
+// RENDER JOBS FUNCTION
+// Shows jobs based on selected tab
+
+function renderJobs() {
+
+  const container = document.getElementById("job-container");
+  container.innerHTML = "";
+
+  // Filter jobs based on tab
+  const filteredJobs = jobs.filter(job => {
+    if (currentTab === "all") return job.status === "all";
+    return job.status === currentTab;
+  });
+
+  // Update tab job count
+  document.getElementById("job-count").innerText =
+    filteredJobs.length + " Jobs";
+
+  // Show empty message if no jobs
+  if (filteredJobs.length === 0) {
+    document.getElementById("empty-message").classList.remove("hidden");
+  } else {
+    document.getElementById("empty-message").classList.add("hidden");
+  }
+// Create card for each job
+  filteredJobs.forEach(job => {
+
+    const card = document.createElement("div");
+    card.className = "bg-white p-5 rounded-lg shadow";
+
+    card.innerHTML = `
+      <div class="flex justify-between items-start">
+        <div>
+          <h3 class="text-xl font-semibold">${job.companyName}</h3>
+          <p class="text-gray-600">${job.position}</p>
+          <p class="text-sm text-gray-500">
+            ${job.location} • ${job.type} • ${job.salary}
+          </p>
+        </div>
+
+        <!-- Delete Button -->
+        <button onclick="deleteJob(${job.id})"
+          class="btn btn-sm btn-circle btn-ghost">
+          ✕
+        </button>
+      </div>
+
+      <p class="mt-3 text-gray-700">${job.description}</p>
+
+      <!-- Interview & Rejected Buttons -->
+      <div class="mt-4 space-x-2">
+
+        <button onclick="updateStatus(${job.id}, 'interview')"
+          class="btn btn-outline btn-success btn-sm">
+          Interview
+        </button>
+
+        <button onclick="updateStatus(${job.id}, 'rejected')"
+          class="btn btn-outline btn-error btn-sm">
+          Rejected
+        </button>
+
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+
+  updateDashboard();
+}
+
+

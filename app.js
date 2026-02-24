@@ -192,3 +192,18 @@ function showTab(tabName) {
 
   renderJobs();
 }
+
+// Updated status function and toggle between Interview, Rejected and all 
+function updateStatus(id, newStatus) {
+
+  const job = jobs.find(job => job.id === id);
+
+  if (job.status === newStatus) {
+    job.status = "all"; // toggle back
+  } else {
+    job.status = newStatus;
+  }
+
+  renderJobs();
+}
+

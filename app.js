@@ -206,4 +206,18 @@ function updateStatus(id, newStatus) {
 
   renderJobs();
 }
+// Update dashboar counts and initial job render
 
+function updateDashboard() {
+
+  const total = jobs.length;
+  const interview = jobs.filter(job => job.status === "interview").length;
+  const rejected = jobs.filter(job => job.status === "rejected").length;
+
+  document.getElementById("total-count").innerText = total;
+  document.getElementById("interview-count").innerText = interview;
+  document.getElementById("rejected-count").innerText = rejected;
+}
+
+
+renderJobs();

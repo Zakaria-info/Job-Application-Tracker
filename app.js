@@ -174,4 +174,21 @@ function showTab(tabName) {
     "px-4 py-2 rounded-md bg-gray-200 text-gray-700 text-sm";
 
 
+// Activate selected tab
+  if (tabName === "all") {
+    document.getElementById("tab-all").className =
+      "px-4 py-2 rounded-md bg-blue-600 text-white text-sm";
+  }
+
+  if (tabName === "interview") {
+    document.getElementById("tab-interview").className =
+      "px-4 py-2 rounded-md bg-blue-600 text-white text-sm";
+  }
+
+  if (tabName === "rejected") {
+    document.getElementById("tab-rejected").className =
+      "px-4 py-2 rounded-md bg-blue-600 text-white text-sm";
+  }
+
+  renderJobs();
 }

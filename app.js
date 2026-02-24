@@ -206,7 +206,21 @@ function updateStatus(id, newStatus) {
 
   renderJobs();
 }
-// Update dashboar counts and initial job render
+
+// Delate job function 
+
+function deleteJob(id) {
+
+  const index = jobs.findIndex(job => job.id === id);
+
+  if (index !== -1) {
+    jobs.splice(index, 1);
+  }
+
+  renderJobs();
+}
+
+// Update dashboard counts and initial job render
 
 function updateDashboard() {
 

@@ -5,7 +5,7 @@ A sleek, responsive, and logic-driven dashboard designed to help job seekers org
 ---
 
 ## 🚀 Live Demo
-[Insert your Netlify/GitHub Pages Link Here]
+[(https://zakaria-info.github.io/Job-Application-Tracker/)]
 
 ## 🛠️ Tech Stack
 * **Frontend:** HTML5, Tailwind CSS
@@ -27,3 +27,16 @@ const filteredJobs = jobs.filter(job => {
   if (currentTab === "all") return job.status === "all";
   return job.status === currentTab;
 });
+
+📋 Key Functionalities
+Real-time Dashboard: Instant updates for Total, Interview, and Rejected application counts.
+
+Status Toggling: Users can move jobs between 'Interview' and 'Rejected' states with a single click, which automatically updates the category tabs.
+
+Tab-based Navigation: Organized view of jobs categorized by their current recruitment stage.
+
+Dynamic Deletion: Allows users to remove job entries, which recalculates all dashboard statistics immediately.
+
+Empty State Handling: Displays a user-friendly "No Jobs Available" message when a category is empty.
+
+Responsive Design: Fully optimized for Mobile, Tablet, and Desktop views using Tailwind's grid and flexbox systems.
